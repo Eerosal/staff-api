@@ -1,0 +1,31 @@
+#file: noinspection YAMLSchemaValidation
+version: "3.8"
+services:
+  staff-api-db-mock:
+    image: mariadb:latest
+    environment:
+      MARIADB_DATABASE: staff_api_test
+      MARIADB_USER: staff-api-test
+      MARIADB_PASSWORD: test12345
+      MARIADB_RANDOM_ROOT_PASSWORD: "yes"
+    volumes:
+      - ./testing/mock/sql:/docker-entrypoint-initdb.d
+  staff-api-avatar-mock:
+    image: wiremock/wiremock:2.32.0
+    volumes:
+      - ./testing/mock/avatar:/home/wiremock
+    entrypoint: [ "/docker-entrypoint.sh", "--port=8081" ]
+  staff-api-mojang-mock: # Not exactly a mock, because the endpoints don't match the real API. Only the minimum is implemented.
+    build: ./testing/mock/mojang
+  staff-api:
+    build: ./src
+    env_file: .env.test
+    depends_on:
+      - staff-api-db-mock
+      - staff-api-avatar-mock
+      - staff-api-mojang-mock
+  staff-api-tests:
+    build: testing/tests
+    env_file: .env.test
+    depends_on:
+      - staff-api

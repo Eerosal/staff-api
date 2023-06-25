@@ -1,0 +1,9 @@
+version: "3.8"
+services:
+  staff-api:
+    env_file: .env
+    network_mode: "host"
+    ports:
+      - "127.0.0.1:${STAFF_API_REST_HTTP_PORT}:${STAFF_API_REST_HTTP_PORT}"
+    build:
+      context: ./src

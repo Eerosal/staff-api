@@ -1,0 +1,13 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/avatar/40a1b924-e5a8-4444-9fec-73db15ee7c8d.png"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "image/png"
+    },
+    "bodyFileName": "40a1b924-e5a8-4444-9fec-73db15ee7c8d.png"
+  }
+}

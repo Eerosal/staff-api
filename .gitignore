@@ -19,3 +19,9 @@
 
 # Go workspace file
 go.work
+
+.env
+upload.sh
+
+# Mac OS X Finder
+.DS_Store
