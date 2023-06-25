@@ -46,6 +46,8 @@ If avatars=true is passed in the query string, the response will contain a list 
 }
 ```
 
+The API currently supports only one group per user. If a user has multiple groups, only the first one will be used.
+
 ## Setup
 
 ### Prerequisites
