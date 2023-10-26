@@ -21,7 +21,7 @@ func main() {
 		if uuid == "40a1b924-e5a8-4444-9fec-73db15ee7c8d" {
 			name = "player1"
 		} else if uuid == "c806a034-b626-4336-a1e2-37b902888bf5" {
-			name = "player2"
+			name = "PLAYER2"
 		} else if uuid == "d0b765a7-87d6-49fb-96d4-17e1cdb6ca2e" {
 			name = "player3"
 		} else if uuid == "c706ec9f-1d29-4cf6-a849-ba5830b5cb41" {

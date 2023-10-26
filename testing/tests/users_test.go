@@ -110,7 +110,7 @@ func TestUsersEndpoint(t *testing.T) {
 			t.Fatal("Expected user 3 to have uuid ef7eb665-a3ac-40a6-b9a4-1100f60b28cd (highest uuid in alphabetical order)")
 		}
 
-		for _, expectedPlayer := range []string{"player1", "player2", "player3", "player6"} {
+		for _, expectedPlayer := range []string{"player1", "PLAYER2", "player3", "player6"} {
 			found := false
 			for _, user := range users {
 				if user.Name == expectedPlayer {
