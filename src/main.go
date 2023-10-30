@@ -75,6 +75,7 @@ func main() {
 			rwm.RUnlock()
 			return
 		}
+		w.Header().Set("Content-Type", "application/json")
 
 		if ifModified, err := time.Parse(
 			http.TimeFormat,
@@ -97,7 +98,6 @@ func main() {
 		}
 
 		w.WriteHeader(http.StatusOK)
-		w.Header().Set("Content-Type", "application/json")
 		w.Header().Set("Last-Modified", resultUpdateTime.Format(http.TimeFormat))
 		_, err := w.Write(response)
 		if err != nil {

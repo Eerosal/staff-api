@@ -37,6 +37,12 @@ func TestUsersEndpoint(t *testing.T) {
 			t.Fatalf("Expected status code 200, got %d", resp.StatusCode)
 		}
 
+		// Expect response Content-Type to be application/json
+		contentType := resp.Header.Get("Content-Type")
+		if contentType != "application/json" {
+			t.Fatalf("Expected Content-Type to be application/json, got %s", contentType)
+		}
+
 		body, err := io.ReadAll(resp.Body)
 		if err != nil {
 			t.Fatal(err)
