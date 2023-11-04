@@ -6,6 +6,10 @@ Motivation behind this project was to provide a simple way to display a list of 
 
 **NB:** This project has been done rapidly, so the software is provided "as is" and is not guaranteed to work in all environments. Use at your own risk. Feel free to open an issue if you find a bug.
 
+## Live demo
+
+You can see a live demo of the API in action [here](https://api.quut.io/staff-api/api/users?avatars=true). It is used to display a list of staff members on the [Quut.io](https://quut.io/yllapito) website.
+
 ## Data sources
 
 The API uses the following data sources:
