@@ -70,7 +70,6 @@ func main() {
 			_, err = w.Write([]byte("Internal server error"))
 			if err != nil {
 				logger.Warn(fmt.Sprintf("Failed to write response: %v", err))
-				return
 			}
 			rwm.RUnlock()
 			return
